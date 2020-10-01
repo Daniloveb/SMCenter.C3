@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="SMCenter.Forms.ProjectionRackTemplate"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:SMCenter.Forms"
+             xmlns:scwpf="http://schemas.microsoft.com/SystemCenter/Common/UI/Wpf" 
+             xmlns:smcontrols="clr-namespace:Microsoft.EnterpriseManagement.UI.WpfControls;assembly=Microsoft.EnterpriseManagement.UI.SMControls"
+             xmlns:views="clr-namespace:Microsoft.EnterpriseManagement.UI.FormsInfra;assembly=Microsoft.EnterpriseManagement.UI.FormsInfra" 
+             mc:Ignorable="d" 
+             d:DesignHeight="25" d:DesignWidth="550" Loaded="UserControl_Loaded" DataContextChanged="UserControl_DataContextChanged">
+    <Grid>
+        <scwpf:SingleInstancePicker Name ="sip" Margin="8,0,225,0"  BorderThickness="1" BorderBrush="Gray" Padding="0,0,5,0" Instance="{Binding Path=local:Pathstring, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" HorizontalAlignment="Stretch" VerticalAlignment="Top"/>
+        <Label Name="lb_Unit" Margin="0,0,185,0" HorizontalAlignment="Right" Height="25" Width="35" Content="Unit:" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Border Name ="brd_Unit" HorizontalAlignment="Right" Margin="0,0,140,0" Height="25" Width="40"  >
+            <TextBox Name="TxtUnit" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderThickness="1" BorderBrush="Gray" Margin="0,0,1,0" MaxLength="2"/>
+        </Border>
+        
+        <Border Name ="brd_Add" HorizontalAlignment="Right" Margin="0,0,95,0" Height="25" Width="40"  BorderThickness="1" BorderBrush="Gray" MouseDown="brd_Add_MouseDown">
+            <Image Name ="Image_Add" Source="Resources\AddControl.png" HorizontalAlignment="Center" VerticalAlignment="Center" Height="18" Width="18" />
+        </Border>
+        <Border Name ="brd_Edit" HorizontalAlignment="Right" Margin="0,0,50,0" Height="25" Width="40"  BorderThickness="1" BorderBrush="Gray" MouseDown="brd_Edit_MouseDown">
+            <Image Name ="Image_Edit" Source="Resources\Open_VS.png" HorizontalAlignment="Center" VerticalAlignment="Center" Height="18" Width="18" />
+        </Border>
+        <Border Name ="brd_Delete" HorizontalAlignment="Right" Margin="0,0,5,0" Height="25" Width="40"  BorderThickness="1" BorderBrush="Gray" MouseDown="brd_Delete_MouseDown">
+            <Image Name ="Image_Delete" Source="Resources\Clear.ico" HorizontalAlignment="Center" VerticalAlignment="Center" Height="18" Width="18" />
+        </Border>
+    </Grid>
+</UserControl>

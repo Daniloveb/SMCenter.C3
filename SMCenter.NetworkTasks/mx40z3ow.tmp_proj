@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F9A96665-EBC6-4A43-92C6-812EF801BE23}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SMCenter.NetworkTasks</RootNamespace>
+    <AssemblyName>SMCenter.NetworkTasksLib</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ConnectionsForm.xaml.cs">
+      <DependentUpon>ConnectionsForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CablesTree.cs" />
+    <Compile Include="ConnectionsTree.cs" />
+    <Compile Include="LogFile.cs" />
+    <Compile Include="MapFormEvents.cs" />
+    <Compile Include="TreeViewForm.xaml.cs">
+      <DependentUpon>TreeViewForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GetRel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SearchNetworkMap.cs" />
+    <Compile Include="TaskAction.cs" />
+    <Compile Include="UIClasses.cs" />
+    <Compile Include="MapForm.xaml.cs">
+      <DependentUpon>MapForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Zoom.cs" />
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Add2_VS.png" />
+    <Content Include="Resources\AddButton_VS.png" />
+    <Content Include="Resources\AddChildNode.png" />
+    <Content Include="Resources\AddComponent.png" />
+    <Content Include="Resources\AddControl.png" />
+    <Content Include="Resources\Add_Button.png" />
+    <Content Include="Resources\Add_VS.png" />
+    <Content Include="Resources\Battery.ico" />
+    <Content Include="Resources\class.png" />
+    <Content Include="Resources\Clear.ico" />
+    <Content Include="Resources\Delete_Button.png" />
+    <Content Include="Resources\Disconnect.png" />
+    <Content Include="Resources\Edit_Button.png" />
+    <Content Include="Resources\ItamAdministrationLocationsFolder48x48.png" />
+    <Content Include="Resources\ItamAdministrationOrganizationsFolder48x48.png" />
+    <Content Include="Resources\ItamHardwareHardwareAssetsFolder48x48.png" />
+    <Content Include="Resources\ItamHardwareHardwareCatalogItemsFolder48x48.png" />
+    <Content Include="Resources\ItamNetworkAssetManagementPhysicalConnectionsFolder48x48.png" />
+    <Content Include="Resources\NewFile.png" />
+    <Content Include="Resources\Open_6296.ico" />
+    <Content Include="Resources\Open_VS.png" />
+    <Content Include="Resources\PencilTool_206.ico" />
+    <Content Include="Resources\Refresh.png" />
+    <Content Include="Resources\RemoveLink.png" />
+    <Content Include="Resources\Restart.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ItemGroup>
+    <ReferencePath Include="C:\Windows\assembly\GAC_MSIL\Microsoft.EnterpriseManagement.Core\7.0.5000.0__31bf3856ad364e35\Microsoft.EnterpriseManagement.Core.dll" />
+    <ReferencePath Include="c:\Dropbox\Working\SCSM\SMCenter.NetworkTasks\bin\Debug\Microsoft.EnterpriseManagement.ServiceManager.Application.Common.dll" />
+    <ReferencePath Include="C:\Windows\assembly\GAC_MSIL\Microsoft.EnterpriseManagement.ServiceManager\7.0.5000.0__31bf3856ad364e35\Microsoft.EnterpriseManagement.ServiceManager.dll" />
+    <ReferencePath Include="c:\Dropbox\Working\SCSM\SMCenter.NetworkTasks\bin\Debug\Microsoft.EnterpriseManagement.ServiceManager.Incident.Common.dll" />
+    <ReferencePath Include="c:\Dropbox\Working\SCSM\SMCenter.NetworkTasks\bin\Debug\Microsoft.EnterpriseManagement.ServiceManager.Incident.TaskHandlers.dll" />
+    <ReferencePath Include="c:\Dropbox\Working\SCSM\SMCenter.NetworkTasks\bin\Debug\Microsoft.EnterpriseManagement.ServiceManager.SharedResources.dll" />
+    <ReferencePath Include="c:\Dropbox\Working\SCSM\SMCenter.NetworkTasks\bin\Debug\Microsoft.EnterpriseManagement.ServiceManager.UI.Common.dll" />
+    <ReferencePath Include="c:\Dropbox\Working\SCSM\SMCenter.NetworkTasks\bin\Debug\Microsoft.EnterpriseManagement.UI.ConsoleFramework.dll" />
+    <ReferencePath Include="c:\Dropbox\Working\SCSM\SMCenter.NetworkTasks\bin\Debug\Microsoft.EnterpriseManagement.UI.Controls.dll" />
+    <ReferencePath Include="c:\Dropbox\Working\SCSM\SMCenter.NetworkTasks\bin\Debug\Microsoft.EnterpriseManagement.UI.Core.dll" />
+    <ReferencePath Include="c:\Dropbox\Working\SCSM\SMCenter.NetworkTasks\bin\Debug\Microsoft.EnterpriseManagement.UI.Extensions.dll" />
+    <ReferencePath Include="c:\Dropbox\Working\SCSM\SMCenter.NetworkTasks\bin\Debug\Microsoft.EnterpriseManagement.UI.FormsInfra.dll" />
+    <ReferencePath Include="c:\Dropbox\Working\SCSM\SMCenter.NetworkTasks\bin\Debug\Microsoft.EnterpriseManagement.UI.Foundation.dll" />
+    <ReferencePath Include="c:\Dropbox\Working\SCSM\SMCenter.NetworkTasks\bin\Debug\Microsoft.EnterpriseManagement.UI.SdkDataAccess.dll" />
+    <ReferencePath Include="c:\Dropbox\Working\SCSM\SMCenter.NetworkTasks\bin\Debug\Microsoft.EnterpriseManagement.UI.SMControls.dll" />
+    <ReferencePath Include="c:\Dropbox\Working\SCSM\SMCenter.NetworkTasks\bin\Debug\Microsoft.EnterpriseManagement.UI.WpfViews.dll" />
+    <ReferencePath Include="C:\Windows\Microsoft.NET\Framework\v2.0.50727\mscorlib.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.0\PresentationCore.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.0\PresentationFramework.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.5\System.Core.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.5\System.Data.DataSetExtensions.dll" />
+    <ReferencePath Include="C:\Windows\Microsoft.NET\Framework\v2.0.50727\System.Data.dll" />
+    <ReferencePath Include="C:\Windows\Microsoft.NET\Framework\v2.0.50727\System.dll" />
+    <ReferencePath Include="C:\Windows\Microsoft.NET\Framework\v2.0.50727\System.Drawing.dll" />
+    <ReferencePath Include="C:\Windows\Microsoft.NET\Framework\v2.0.50727\System.Windows.Forms.dll" />
+    <ReferencePath Include="C:\Windows\Microsoft.NET\Framework\v2.0.50727\System.Xml.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.5\System.Xml.Linq.dll" />
+    <ReferencePath Include="C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.0\WindowsBase.dll" />
+    <ReferencePath Include="c:\Dropbox\Working\SCSM\SMCenter.NetworkTasks\bin\Debug\WPFToolKit.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="c:\Dropbox\Working\SCSM\SMCenter.NetworkTasks\obj\Debug\ConnectionsForm.g.cs" />
+    <Compile Include="c:\Dropbox\Working\SCSM\SMCenter.NetworkTasks\obj\Debug\TreeViewForm.g.cs" />
+    <Compile Include="c:\Dropbox\Working\SCSM\SMCenter.NetworkTasks\obj\Debug\MapForm.g.cs" />
+    <Compile Include="c:\Dropbox\Working\SCSM\SMCenter.NetworkTasks\obj\Debug\GeneratedInternalTypeHelper.g.cs" />
+  </ItemGroup>
+</Project>

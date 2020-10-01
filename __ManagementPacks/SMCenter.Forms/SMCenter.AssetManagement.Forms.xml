@@ -1,0 +1,474 @@
+﻿<ManagementPack ContentReadable="true" SchemaVersion="2.0" OriginalSchemaVersion="1.1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+  <Manifest>
+    <Identity>
+      <ID>SMCenter.AssetManagement.Forms</ID>
+      <Version>1.6.82.0</Version>
+    </Identity>
+    <Name>SMCenter AssetManagement Forms</Name>
+    <References>
+      <Reference Alias="System">
+        <ID>System.Library</ID>
+        <Version>7.5.8501.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+      <Reference Alias="Console">
+        <ID>Microsoft.EnterpriseManagement.ServiceManager.UI.Console</ID>
+        <Version>7.5.3079.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+      <Reference Alias="SMC_Core">
+        <ID>SMCenter.AssetManagement.Core</ID>
+        <Version>1.0.4.4</Version>
+        <PublicKeyToken>75b45bd6835084b1</PublicKeyToken>
+      </Reference>
+	  <Reference Alias="SMC_HardwareAssetManagement_Library">
+        <ID>SMCenter.HardwareAssetManagement.Library</ID>
+        <Version>1.0.4.9</Version>
+        <PublicKeyToken>75b45bd6835084b1</PublicKeyToken>
+      </Reference>
+	  <Reference Alias="SMC_NetworkAssetManagement_Library">
+        <ID>SMCenter.NetworkAssetManagement.Library</ID>
+        <Version>1.3.0.10</Version>
+        <PublicKeyToken>75b45bd6835084b1</PublicKeyToken>
+      </Reference>
+	  <Reference Alias="System_NetworkManagement_Library">
+        <ID>System.NetworkManagement.Library</ID>
+        <Version>7.1.10226.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+	  <Reference Alias="SMC_SoftwareManagement_Library">
+        <ID>SMCenter.SoftwareAssetManagement.Library</ID>
+        <Version>1.0.0.33</Version>
+        <PublicKeyToken>75b45bd6835084b1</PublicKeyToken>
+      </Reference>
+    </References>
+  </Manifest>
+  <Categories>
+  <Category ID="SMCenter.AssetManagement.FormsCategory" Value="Console!Microsoft.EnterpriseManagement.ServiceManager.ManagementPack">
+      <ManagementPackName>SMCenter.AssetManagement.Forms</ManagementPackName>
+      <ManagementPackVersion>1.0.2.75</ManagementPackVersion>
+	  <ManagementPackPublicKeyToken>75b45bd6835084b1</ManagementPackPublicKeyToken>
+    </Category>
+  </Categories>
+  <Presentation>
+    <Forms>
+      <Form ID="LocationForm" Accessibility="Public" Target="SMC_Core!SMCenter.LocationProjection" Assembly="SMCenter.Formsdll" TypeName="SMCenter.Forms.LocationForm">
+        <Category>Form</Category>
+		<FormStrings>
+		  <FormString ID="lblTitle">$MPElement[Name="Header_Location_Title"]$</FormString>
+          <FormString ID="tabItemHeaderGeneral">$MPElement[Name="TabItem_General"]$</FormString>
+		  <FormString ID="tabItemHeaderHierarchy">$MPElement[Name="TabItem_Hierarchy"]$</FormString>
+          <FormString ID="tabItemHeaderHistory">$MPElement[Name="TabItem_History"]$</FormString>
+          <FormString ID="DisplayName">$MPElement[Name="Label_Location_DisplayName"]$</FormString>
+          <FormString ID="Id">$MPElement[Name="Label_Location_Id"]$</FormString>lblPicker
+          <FormString ID="LocationType">$MPElement[Name="Label_Location_LocationType"]$</FormString>
+		  <FormString ID="ImagePath">$MPElement[Name="Label_Location_ImagePath"]$</FormString>
+          <FormString ID="Address">$MPElement[Name="Label_Location_Address"]$</FormString>
+		  <FormString ID="Description">$MPElement[Name="Label_Location_Description"]$</FormString>
+		  <FormString ID="lbAdd">$MPElement[Name="lb_Location_Add"]$</FormString>
+		  <FormString ID="lbCreate">$MPElement[Name="lb_Location_CreateLocation"]$</FormString>
+		  <FormString ID="lbOpen">$MPElement[Name="lb_Location_OpenLocation"]$</FormString>
+		  <FormString ID="lbDelete">$MPElement[Name="lb_Location_DeleteLocation"]$</FormString>
+		  <FormString ID="lbDeleteLink">$MPElement[Name="lb_Location_DeleteLink"]$</FormString>
+		  <FormString ID="lblLocationTree">$MPElement[Name="lbl_LocationTree"]$</FormString>
+		  <FormString ID="lbRefresh">$MPElement[Name="lbl_LocationRefresh"]$</FormString>		   
+        </FormStrings>
+      </Form>
+	  <Form ID="HAForm" Accessibility="Public" Target="SMC_HardwareAssetManagement_Library!SMCenter.HardwareAssetProjection" Assembly="SMCenter.Formsdll" TypeName="SMCenter.Forms.HAForm">
+        <Category>Form</Category>
+		<FormStrings>
+		  <FormString ID="lblHATitle">$MPElement[Name="Header_HA_Title"]$</FormString>
+          <FormString ID="tabItemHeaderGeneral">$MPElement[Name="TabItem_General"]$</FormString>
+		  <FormString ID="tabItemHeaderHierarchy">$MPElement[Name="TabItem_Hierarchy"]$</FormString>
+          <FormString ID="tabItemHeaderHistory">$MPElement[Name="TabItem_History"]$</FormString>
+          <FormString ID="DisplayName">$MPElement[Name="Label_HA_DisplayName"]$</FormString>
+		  <FormString ID="lblProjectionObject">$MPElement[Name="lbl_HA_ProjectionObject"]$</FormString>
+        </FormStrings>
+      </Form>
+	  
+	  <Form ID="NodeForm" Accessibility="Public" Target="SMC_NetworkAssetManagement_Library!SMCenter.NodeProjection" Assembly="SMCenter.Formsdll" TypeName="SMCenter.Forms.NodeForm">
+        <Category>Form</Category>
+      </Form>
+	  <Form ID="PPForm" Accessibility="Public" Target="SMC_NetworkAssetManagement_Library!SMCenter.PPProjection" Assembly="SMCenter.Formsdll" TypeName="SMCenter.Forms.PPForm">
+        <Category>Form</Category>
+      </Form>
+	  
+	  <Form ID="NetworkMapForm" Accessibility="Public" Target="SMC_NetworkAssetManagement_Library!SMCenter.NetworkMapProjection" Assembly="SMCenter.Formsdll" TypeName="SMCenter.Forms.NetworkMapForm">
+        <Category>Form</Category>
+		<FormStrings>
+		  <FormString ID="lblNMTitle">$MPElement[Name="Header_HA_Title"]$</FormString>
+		  <FormString ID="tabItemHeaderNetworkMap">$MPElement[Name="TabItem_NetworkMap"]$</FormString>
+          <FormString ID="tabItemHeaderHistory">$MPElement[Name="TabItem_History"]$</FormString>
+        </FormStrings>
+      </Form>
+	  <Form ID="ModuleForm" Accessibility="Public" Target="SMC_NetworkAssetManagement_Library!SMCenter.ModuleProjection" Assembly="SMCenter.Formsdll" TypeName="SMCenter.Forms.ModuleForm"> 
+        <Category>Form</Category>
+      </Form>
+	  <Form ID="RackForm" Accessibility="Public" Target="SMC_NetworkAssetManagement_Library!SMCenter.RackProjection" Assembly="SMCenter.Formsdll" TypeName="SMCenter.Forms.RackForm"> 
+        <Category>Form</Category>
+		<FormStrings>
+		  <FormString ID="lblRackTitle">$MPElement[Name="Header_Rack_Title"]$</FormString>
+		  <FormString ID="tabItemHeaderNetworkMap">$MPElement[Name="Rack"]$</FormString>
+          <FormString ID="tabItemHeaderHistory">$MPElement[Name="TabItem_History"]$</FormString>
+        </FormStrings>
+      </Form>
+	   <Form ID="CatalogItemForm" Accessibility="Public" Target="SMC_HardwareAssetManagement_Library!SMCenter.HardwareCatalogItemProjection" Assembly="SMCenter.Formsdll" TypeName="SMCenter.Forms.CatalogItemForm">
+        <Category>Form</Category>
+		<FormStrings>
+          <FormString ID="tabItemHeaderGeneral">$MPElement[Name="TabItem_General"]$</FormString>
+          <FormString ID="tabItemHeaderHistory">$MPElement[Name="TabItem_History"]$</FormString>
+        </FormStrings>
+      </Form>
+	  <Form ID="OrganizationForm" Accessibility="Public" Target="SMC_Core!SMCenter.OrganizationProjection" Assembly="SMCenter.Formsdll" TypeName="SMCenter.Forms.OrganizationForm">
+        <Category>Form</Category>
+		<FormStrings>
+          <FormString ID="tabItemHeaderGeneral">$MPElement[Name="TabItem_General"]$</FormString>
+          <FormString ID="tabItemHeaderHistory">$MPElement[Name="TabItem_History"]$</FormString>
+        </FormStrings>
+      </Form>
+	  <Form ID="DeviceForm" Accessibility="Public" Target="SMC_NetworkAssetManagement_Library!SMCenter.DeviceProjection" Assembly="SMCenter.Formsdll" TypeName="SMCenter.Forms.DeviceForm">
+        <Category>Form</Category>
+		<FormStrings>
+          <FormString ID="tabItemHeaderGeneral">$MPElement[Name="TabItem_General"]$</FormString>
+          <FormString ID="tabItemHeaderHistory">$MPElement[Name="TabItem_History"]$</FormString>
+        </FormStrings>
+      </Form>
+	  <Form ID="SoftwareTitleForm" Accessibility="Public" Target="SMC_SoftwareManagement_Library!SMCenter.SoftwareTitleProjection" Assembly="SMCenter.Formsdll" TypeName="SMCenter.Forms.SoftwareTitleForm"> 
+        <Category>Form</Category>
+		<FormStrings>
+		  <FormString ID="lblSoftwateTitle">$MPElement[Name="Header_SoftwareTitle_Title"]$</FormString>
+		  <FormString ID="tabItemHeaderGeneral">$MPElement[Name="TabItem_General"]$</FormString>
+          <FormString ID="tabItemHeaderHistory">$MPElement[Name="TabItem_History"]$</FormString>
+        </FormStrings>
+      </Form>
+    </Forms>
+	<ConsoleTasks>
+		<ConsoleTask ID="CreateSoftwareVersionTask" Accessibility="Public" Enabled="true" Target="SMC_SoftwareManagement_Library!SMCenter.SoftwareTitle" RequireOutput="false">
+			<Assembly>Console!SdkDataAccessAssembly</Assembly>
+			<Handler>Microsoft.EnterpriseManagement.UI.SdkDataAccess.ConsoleTaskHandler</Handler>
+			<Parameters>
+				<Argument Name="Assembly">SMCenter.Forms</Argument>
+				<Argument Name="Type">SMCenter.Forms.CreateSoftwareVersionTask</Argument>
+			</Parameters>
+		</ConsoleTask>
+		<ConsoleTask ID="RelatedDCFormTask" Accessibility="Public" Enabled="true" Target="SMC_NetworkAssetManagement_Library!SMCenter.WindowsComputer" RequireOutput="false">
+			<Assembly>Console!SdkDataAccessAssembly</Assembly>
+			<Handler>Microsoft.EnterpriseManagement.UI.SdkDataAccess.ConsoleTaskHandler</Handler>
+			<Parameters>
+				<Argument Name="Assembly">SMCenter.Forms</Argument>
+				<Argument Name="Type">SMCenter.Forms.RelatedDCFormAction</Argument>
+			</Parameters>
+		</ConsoleTask>
+		<ConsoleTask ID="RelatedWCFormTask" Accessibility="Public" Enabled="true" Target="SMC_NetworkAssetManagement_Library!SMCenter.DeployedComputer" RequireOutput="false">
+			<Assembly>Console!SdkDataAccessAssembly</Assembly>
+			<Handler>Microsoft.EnterpriseManagement.UI.SdkDataAccess.ConsoleTaskHandler</Handler>
+			<Parameters>
+				<Argument Name="Assembly">SMCenter.Forms</Argument>
+				<Argument Name="Type">SMCenter.Forms.RelatedWCFormAction</Argument>
+			</Parameters>
+		</ConsoleTask>
+		<ConsoleTask ID="SCSFormTask_WC" Accessibility="Public" Enabled="true" Target="SMC_NetworkAssetManagement_Library!SMCenter.WindowsComputer" RequireOutput="false">
+			<Assembly>Console!SdkDataAccessAssembly</Assembly>
+			<Handler>Microsoft.EnterpriseManagement.UI.SdkDataAccess.ConsoleTaskHandler</Handler>
+			<Parameters>
+				<Argument Name="Assembly">SMCenter.Forms</Argument>
+				<Argument Name="Type">SMCenter.Forms.SCSFormAction</Argument>
+			</Parameters>
+		</ConsoleTask>
+		<ConsoleTask ID="SCSFormTask_DC" Accessibility="Public" Enabled="true" Target="SMC_NetworkAssetManagement_Library!SMCenter.DeployedComputer" RequireOutput="false">
+			<Assembly>Console!SdkDataAccessAssembly</Assembly>
+			<Handler>Microsoft.EnterpriseManagement.UI.SdkDataAccess.ConsoleTaskHandler</Handler>
+			<Parameters>
+				<Argument Name="Assembly">SMCenter.Forms</Argument>
+				<Argument Name="Type">SMCenter.Forms.SCSFormAction</Argument>
+			</Parameters>
+		</ConsoleTask>
+		<ConsoleTask ID="SCSFormTask_Module" Accessibility="Public" Enabled="true" Target="SMC_NetworkAssetManagement_Library!SMCenter.Module" RequireOutput="false">
+			<Assembly>Console!SdkDataAccessAssembly</Assembly>
+			<Handler>Microsoft.EnterpriseManagement.UI.SdkDataAccess.ConsoleTaskHandler</Handler>
+			<Parameters>
+				<Argument Name="Assembly">SMCenter.Forms</Argument>
+				<Argument Name="Type">SMCenter.Forms.SCSFormAction</Argument>
+			</Parameters>
+		</ConsoleTask>
+		<ConsoleTask ID="SCSFormTask_NodePort" Accessibility="Public" Enabled="true" Target="SMC_NetworkAssetManagement_Library!SMCenter.NodePort" RequireOutput="false">
+			<Assembly>Console!SdkDataAccessAssembly</Assembly>
+			<Handler>Microsoft.EnterpriseManagement.UI.SdkDataAccess.ConsoleTaskHandler</Handler>
+			<Parameters>
+				<Argument Name="Assembly">SMCenter.Forms</Argument>
+				<Argument Name="Type">SMCenter.Forms.SCSFormAction</Argument>
+			</Parameters>
+		</ConsoleTask>
+		<ConsoleTask ID="SCSFormTask_Device" Accessibility="Public" Enabled="true" Target="SMC_NetworkAssetManagement_Library!SMCenter.Device" RequireOutput="false">
+			<Assembly>Console!SdkDataAccessAssembly</Assembly>
+			<Handler>Microsoft.EnterpriseManagement.UI.SdkDataAccess.ConsoleTaskHandler</Handler>
+			<Parameters>
+				<Argument Name="Assembly">SMCenter.Forms</Argument>
+				<Argument Name="Type">SMCenter.Forms.SCSFormAction</Argument>
+			</Parameters>
+		</ConsoleTask>
+		<ConsoleTask ID="SCSFormTask_DeviceNA" Accessibility="Public" Enabled="true" Target="SMC_NetworkAssetManagement_Library!SMCenter.Device.NetworkAdapter" RequireOutput="false">
+			<Assembly>Console!SdkDataAccessAssembly</Assembly>
+			<Handler>Microsoft.EnterpriseManagement.UI.SdkDataAccess.ConsoleTaskHandler</Handler>
+			<Parameters>
+				<Argument Name="Assembly">SMCenter.Forms</Argument>
+				<Argument Name="Type">SMCenter.Forms.SCSFormAction</Argument>
+			</Parameters>
+		</ConsoleTask>
+		<ConsoleTask ID="SCSFormTask_ConnectionsForm" Accessibility="Public" Enabled="true" Target="System!System.ConfigItem" RequireOutput="false">
+			<Assembly>Console!SdkDataAccessAssembly</Assembly>
+			<Handler>Microsoft.EnterpriseManagement.UI.SdkDataAccess.ConsoleTaskHandler</Handler>
+			<Parameters>
+				<Argument Name="Assembly">SMCenter.Forms</Argument>
+				<Argument Name="Type">SMCenter.Forms.ConnectionsFormAction</Argument>
+			</Parameters>
+		</ConsoleTask>
+	</ConsoleTasks>
+	<ImageReferences>
+	  <ImageReference ElementID="RelatedDCFormTask" ImageID="monitor_48" />
+	  <ImageReference ElementID="RelatedWCFormTask" ImageID="monitor_48" />
+	  <ImageReference ElementID="SCSFormTask_ConnectionsForm" ImageID="mind_map" />
+	  <ImageReference ElementID="SCSFormTask_WC" ImageID="link_48" />
+	  <ImageReference ElementID="SCSFormTask_DC" ImageID="link_48" />
+	  <ImageReference ElementID="SCSFormTask_Module" ImageID="link_48" />
+	  <ImageReference ElementID="SCSFormTask_NodePort" ImageID="link_48" />
+	  <ImageReference ElementID="SCSFormTask_Device" ImageID="link_48" />
+	  <ImageReference ElementID="SCSFormTask_DeviceNA" ImageID="link_48" />
+	  <ImageReference ElementID="CreateSoftwareVersionTask" ImageID="SoftwareTitle16x16" /> 
+	</ImageReferences>
+	<StringResources>
+      <StringResource ID="Header_Location_Title" />
+      <StringResource ID="TabItem_General" />
+      <StringResource ID="TabItem_Hierarchy" />
+      <StringResource ID="TabItem_History" />
+      <StringResource ID="Label_Location_DisplayName" />
+      <StringResource ID="Label_Location_Id" />
+      <StringResource ID="Label_Location_LocationType" />
+      <StringResource ID="Label_Location_Address" />
+	  <StringResource ID="Label_Location_ImagePath" />
+	  <StringResource ID="Label_Location_Description" />
+	  <StringResource ID="lb_Location_Add" />
+	  <StringResource ID="lb_Location_CreateLocation" />
+	  <StringResource ID="lb_Location_OpenLocation" />
+	  <StringResource ID="lb_Location_DeleteLocation" />
+	  <StringResource ID="lb_Location_DeleteLink" />
+	  <StringResource ID="lbl_LocationTree" />
+	  <StringResource ID="lb_LocationRefresh" />
+	  <StringResource ID="Header_HA_Title" />
+	  <StringResource ID="Label_HA_DisplayName" />
+	  <StringResource ID="lblNMTitle" />
+	  <StringResource ID="tabItemHeaderNetworkMap" /> 
+	  <StringResource ID="lbl_HA_ProjectionObject" />
+	  <StringResource ID="Header_Rack_Title"/>
+	  <StringResource ID="Header_SoftwareTitle_Title"/>
+    </StringResources>
+  </Presentation>
+  <LanguagePacks>
+    <LanguagePack ID="ENU" IsDefault="true">
+      <DisplayStrings>
+        <DisplayString ElementID="SMCenter.AssetManagement.Forms">
+          <Name>SMCenter.AssetManagement.Forms</Name>
+        </DisplayString>
+        <DisplayString ElementID="LocationForm">
+          <Name>LocationForm</Name>
+          <Description>Location Form</Description>
+        </DisplayString>
+		<DisplayString ElementID="Header_Location_Title">
+          <Name>Location</Name>
+        </DisplayString>
+		<DisplayString ElementID="TabItem_General">
+          <Name>General</Name>
+        </DisplayString>
+		<DisplayString ElementID="TabItem_Hierarchy">
+          <Name>Hierarchy</Name>
+        </DisplayString>
+		<DisplayString ElementID="TabItem_History">
+          <Name>History</Name>
+        </DisplayString>
+		<DisplayString ElementID="Label_Location_DisplayName">
+          <Name>Display Name</Name>
+        </DisplayString>
+		<DisplayString ElementID="Label_Location_Id">
+          <Name>Id</Name>
+        </DisplayString>
+		<DisplayString ElementID="Label_Location_LocationType">
+          <Name>Location Type</Name>
+        </DisplayString>
+		<DisplayString ElementID="Label_Location_Address">
+          <Name>Location Address</Name>
+        </DisplayString>
+		<DisplayString ElementID="Label_Location_ImagePath">
+          <Name>Path to Image</Name>
+        </DisplayString>
+		<DisplayString ElementID="Label_Location_Description">
+          <Name>Description</Name>
+        </DisplayString>
+		<DisplayString ElementID="lb_Location_Add">
+          <Name>Add Location</Name>
+        </DisplayString>
+		<DisplayString ElementID="lb_Location_CreateLocation">
+          <Name>Create Location</Name>
+        </DisplayString>
+		<DisplayString ElementID="lb_Location_DeleteLocation">
+          <Name>Delete Location</Name>
+        </DisplayString>
+		<DisplayString ElementID="lb_Location_OpenLocation">
+          <Name>View Location</Name>
+        </DisplayString>
+		<DisplayString ElementID="lb_Location_DeleteLink">
+          <Name>Delete Relationship</Name>
+        </DisplayString>
+		<DisplayString ElementID="lbl_LocationTree">
+          <Name>Locations Tree</Name>
+        </DisplayString>
+		<DisplayString ElementID="lb_LocationRefresh">
+          <Name>Refresh</Name>
+        </DisplayString>
+		<DisplayString ElementID="Header_HA_Title">
+          <Name>Hardware Asset</Name>
+        </DisplayString>
+		<DisplayString ElementID="Label_HA_DisplayName">
+          <Name>Display Name</Name>
+        </DisplayString>
+		<DisplayString ElementID="lbl_HA_ProjectionObject">
+          <Name>Model</Name>
+        </DisplayString>
+		<DisplayString ElementID="Header_Rack_Title">
+          <Name>Rack</Name>
+        </DisplayString>
+		<DisplayString ElementID="Header_SoftwareTitle_Title">
+          <Name>Software Title</Name>
+        </DisplayString>
+		<DisplayString ElementID="RelatedDCFormTask">
+          <Name>Find related Deployed Computer</Name>
+        </DisplayString>
+		<DisplayString ElementID="SCSFormTask_WC">
+          <Name>Open SCS Tree</Name>
+        </DisplayString>
+		<DisplayString ElementID="SCSFormTask_DC">
+          <Name>Open SCS Tree</Name>
+        </DisplayString>
+		<DisplayString ElementID="SCSFormTask_Module">
+          <Name>Open SCS Tree</Name>
+        </DisplayString>
+		<DisplayString ElementID="SCSFormTask_NodePort">
+          <Name>Open SCS Tree</Name>
+        </DisplayString>
+		<DisplayString ElementID="SCSFormTask_Device">
+          <Name>Open SCS Tree</Name>
+        </DisplayString>
+		<DisplayString ElementID="SCSFormTask_DeviceNA">
+          <Name>Open SCS Tree</Name>
+        </DisplayString>
+		<DisplayString ElementID="SCSFormTask_ConnectionsForm">
+          <Name>Open Network Connections Form </Name>
+        </DisplayString>
+      </DisplayStrings>
+    </LanguagePack>
+	<LanguagePack ID="RUS" IsDefault="false">
+      <DisplayStrings>
+        <DisplayString ElementID="SMCenter.AssetManagement.Forms">
+          <Name>SMCenter.AssetManagement.Forms</Name>
+        </DisplayString>
+        <DisplayString ElementID="LocationForm">
+          <Name>Расположение</Name>
+          <Description>Описание</Description>
+        </DisplayString>
+		<DisplayString ElementID="Header_Location_Title">
+          <Name>Расположение</Name>
+        </DisplayString>
+		<DisplayString ElementID="TabItem_General">
+          <Name>Общие</Name>
+        </DisplayString>
+		<DisplayString ElementID="TabItem_Hierarchy">
+          <Name>Иерархия</Name>
+        </DisplayString>
+		<DisplayString ElementID="TabItem_History">
+          <Name>История</Name>
+        </DisplayString>
+		<DisplayString ElementID="Label_Location_DisplayName">
+          <Name>Имя расположения</Name>
+        </DisplayString>
+		<DisplayString ElementID="Label_Location_Id">
+          <Name>Id</Name>
+        </DisplayString>
+		<DisplayString ElementID="Label_Location_LocationType">
+          <Name>Тип расположения</Name>
+        </DisplayString>
+		<DisplayString ElementID="Label_Location_Address">
+          <Name>Адрес расположения</Name>
+        </DisplayString>
+		<DisplayString ElementID="Label_Location_ImagePath">
+          <Name>Путь к файлу изображения</Name>
+        </DisplayString>
+		<DisplayString ElementID="Label_Location_Description">
+          <Name>Описание</Name>
+        </DisplayString>
+		<DisplayString ElementID="lb_Location_Add">
+          <Name>Добавить расположение</Name>
+        </DisplayString>
+		<DisplayString ElementID="lb_Location_CreateLocation">
+          <Name>Создать расположение</Name>
+        </DisplayString>
+		<DisplayString ElementID="lb_Location_DeleteLocation">
+          <Name>Удалить расположение</Name>
+        </DisplayString>
+		<DisplayString ElementID="lb_Location_OpenLocation">
+          <Name>Открыть расположение</Name>
+        </DisplayString>
+		<DisplayString ElementID="lb_Location_DeleteLink">
+          <Name>Удалить связь</Name>
+        </DisplayString>
+		<DisplayString ElementID="lbl_LocationTree">
+          <Name>Древовидное представление</Name>
+        </DisplayString>
+		<DisplayString ElementID="lb_LocationRefresh">
+          <Name>Обновить</Name>
+        </DisplayString>
+		<DisplayString ElementID="Header_HA_Title">
+          <Name>Аппаратный актив</Name>
+        </DisplayString>
+		<DisplayString ElementID="Label_HA_DisplayName">
+          <Name>Наименование актива</Name>
+        </DisplayString>
+		<DisplayString ElementID="Header_Rack_Title">
+          <Name>Шкаф</Name>
+        </DisplayString>
+		<DisplayString ElementID="Header_SoftwareTitle_Title">
+          <Name>Наименование ПО</Name>
+        </DisplayString>
+		<DisplayString ElementID="RelatedDCFormTask">
+          <Name>Найти связанный Deployed Computer</Name>
+        </DisplayString>
+		<DisplayString ElementID="SCSFormTask_DC">
+          <Name>Открыть дерево СКС подключений</Name>
+        </DisplayString>
+		<DisplayString ElementID="SCSFormTask_WC">
+          <Name>Открыть дерево СКС подключений</Name>
+        </DisplayString>
+		<DisplayString ElementID="SCSFormTask_Module">
+          <Name>Открыть дерево СКС подключений</Name>
+        </DisplayString>
+		<DisplayString ElementID="SCSFormTask_NodePort">
+          <Name>Открыть дерево СКС подключений</Name>
+        </DisplayString>
+		<DisplayString ElementID="SCSFormTask_Device">
+          <Name>Открыть дерево СКС подключений</Name>
+        </DisplayString>
+		<DisplayString ElementID="SCSFormTask_DeviceNA">
+          <Name>Открыть дерево СКС подключений</Name>
+        </DisplayString>
+		<DisplayString ElementID="SCSFormTask_ConnectionsForm">
+          <Name>Открыть форму подключений</Name>
+        </DisplayString>
+	</DisplayStrings>
+	</LanguagePack>
+  </LanguagePacks>
+  <Resources>
+    <Assembly ID="SMCenter.Formsdll" Accessibility="Public" FileName="SMCenter.Forms.dll" HasNullStream="false" QualifiedName="SMCenter.Forms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+	<Image ID="monitor_48" Accessibility="Public" HasNullStream="false" FileName="monitor_48.png" />
+	<Image ID="mind_map" Accessibility="Public" HasNullStream="false" FileName="mind_map.png" />
+	<Image ID="link_48" Accessibility="Public" HasNullStream="false" FileName="link_48.ico" />
+	<Image ID="SoftwareTitle16x16" Accessibility="Public" HasNullStream="false" FileName="SoftwareTitle16x16.png" />
+  </Resources>
+</ManagementPack>

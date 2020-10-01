@@ -1,0 +1,402 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EF4FAD6C-2C31-413E-987B-F88A08C944C0}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SMCenter.Forms</RootNamespace>
+    <AssemblyName>SMCenter.Forms</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility" />
+    <Reference Include="CommunicatorAPIInterop">
+      <HintPath>..\..\..\..\..\..\CenterSystems\Docs\SCSM2012\Dlls\CommunicatorAPIInterop.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.EnterpriseManagement.Config">
+      <HintPath>..\..\..\..\..\CenterSystems\Docs\SCSM2012\Dlls\Microsoft.EnterpriseManagement.Config.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EnterpriseManagement.Core, Version=7.0.5000.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\CenterSystems\Docs\SCSM2012\Dlls\Microsoft.EnterpriseManagement.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EnterpriseManagement.ServiceManager, Version=7.0.5000.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\CenterSystems\Docs\SCSM2012\Dlls\Microsoft.EnterpriseManagement.ServiceManager.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EnterpriseManagement.ServiceManager.Application.Common">
+      <HintPath>..\..\..\..\..\CenterSystems\Docs\SCSM2012\Dlls\Microsoft.EnterpriseManagement.ServiceManager.Application.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EnterpriseManagement.ServiceManager.CommonResources">
+      <HintPath>..\..\..\..\..\CenterSystems\Docs\SCSM2012\Dlls\Microsoft.EnterpriseManagement.ServiceManager.CommonResources.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EnterpriseManagement.ServiceManager.SharedResources, Version=7.0.5000.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\CenterSystems\Docs\SCSM2012\Dlls\Microsoft.EnterpriseManagement.ServiceManager.SharedResources.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EnterpriseManagement.ServiceManager.UI.Administration">
+      <HintPath>..\..\..\..\..\CenterSystems\Docs\SCSM2012\Dlls\Microsoft.EnterpriseManagement.ServiceManager.UI.Administration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EnterpriseManagement.ServiceManager.UI.Common">
+      <HintPath>..\..\..\..\..\CenterSystems\Docs\SCSM2012\Dlls\Microsoft.EnterpriseManagement.ServiceManager.UI.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EnterpriseManagement.UI.ConsoleFramework, Version=7.1.1000.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\CenterSystems\Docs\SCSM2012\Dlls\Microsoft.EnterpriseManagement.UI.ConsoleFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EnterpriseManagement.UI.Controls">
+      <HintPath>..\..\..\..\..\CenterSystems\Docs\SCSM2012\Dlls\Microsoft.EnterpriseManagement.UI.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EnterpriseManagement.UI.Core, Version=7.0.5000.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\CenterSystems\Docs\SCSM2012\Dlls\Microsoft.EnterpriseManagement.UI.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EnterpriseManagement.UI.Extensions, Version=7.0.5000.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\CenterSystems\Docs\SCSM2012\Dlls\Microsoft.EnterpriseManagement.UI.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EnterpriseManagement.UI.FormsInfra">
+      <HintPath>..\..\..\..\..\CenterSystems\Docs\SCSM2012\Dlls\Microsoft.EnterpriseManagement.UI.FormsInfra.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EnterpriseManagement.UI.Foundation">
+      <HintPath>..\..\..\..\..\CenterSystems\Docs\SCSM2012\Dlls\Microsoft.EnterpriseManagement.UI.Foundation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EnterpriseManagement.UI.SdkDataAccess, Version=7.0.5000.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\CenterSystems\Docs\SCSM2012\Dlls\Microsoft.EnterpriseManagement.UI.SdkDataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EnterpriseManagement.UI.SMControls">
+      <HintPath>..\..\..\..\..\CenterSystems\Docs\SCSM2012\Dlls\Microsoft.EnterpriseManagement.UI.SMControls.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EnterpriseManagement.UI.ViewFramework, Version=7.1.1000.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\CenterSystems\Docs\SCSM2012\Dlls\Microsoft.EnterpriseManagement.UI.ViewFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EnterpriseManagement.UI.WpfViews, Version=7.1.1000.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\CenterSystems\Docs\SCSM2012\Dlls\Microsoft.EnterpriseManagement.UI.WpfViews.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationUI, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="ReachFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Printing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WPFToolkit, Version=3.5.40128.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CreateVersionTaskForm.xaml.cs">
+      <DependentUpon>CreateVersionTaskForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CablesTree.cs" />
+    <Compile Include="CablesTree_old.cs" />
+    <Compile Include="CatalogItemForm.xaml.cs" />
+    <Compile Include="ConnectionsForm.xaml.cs">
+      <DependentUpon>ConnectionsForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ConnectionsTree.cs" />
+    <Compile Include="SoftwareTitleForm.xaml.cs">
+      <DependentUpon>SoftwareTitleForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GetRel.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SCSForm.xaml.cs">
+      <DependentUpon>SCSForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TestForm.xaml.cs">
+      <DependentUpon>TestForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PPForm.xaml.cs">
+      <DependentUpon>PPForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceForm.xaml.cs">
+      <DependentUpon>DeviceForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LogFile.cs" />
+    <Compile Include="RackForm.xaml.cs">
+      <DependentUpon>RackForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectionLocationGeoTemplate.xaml.cs">
+      <DependentUpon>ProjectionLocationGeoTemplate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NodeForm.xaml.cs">
+      <DependentUpon>NodeForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectionRackTemplate.xaml.cs">
+      <DependentUpon>ProjectionRackTemplate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ModuleForm.xaml.cs">
+      <DependentUpon>ModuleForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NetworkMapForm.xaml.cs">
+      <DependentUpon>NetworkMapForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OrganizationForm.xaml.cs">
+      <DependentUpon>OrganizationForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectionLocationTemplate.xaml.cs">
+      <DependentUpon>ProjectionLocationTemplate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectionObjectTemplate.xaml.cs">
+      <DependentUpon>ProjectionObjectTemplate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SelectImageForm.xaml.cs">
+      <DependentUpon>SelectImageForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TaskAction.cs" />
+    <Compile Include="TreeViewForm.xaml.cs">
+      <DependentUpon>TreeViewForm.xaml</DependentUpon>
+    </Compile>
+    <Page Include="CreateVersionTaskForm.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CatalogItemForm.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="CITemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="CITemplate.xaml.cs">
+      <DependentUpon>CITemplate.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="ConnectionsForm.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SoftwareTitleForm.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SCSForm.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TestForm.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PPForm.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="DeviceForm.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="RackForm.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ProjectionLocationGeoTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="NodeForm.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ProjectionRackTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ModuleForm.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="NetworkMapForm.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="OrganizationForm.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ProjectionLocationTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ProjectionObjectTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SelectImageForm.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="HAForm.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="LocationForm.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="HistoryOnlyTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TreeViewForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="HAForm.xaml.cs">
+      <DependentUpon>HAForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FillTreeview.cs" />
+    <Compile Include="LocationForm.xaml.cs">
+      <DependentUpon>LocationForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HistoryOnlyTemplate.xaml.cs">
+      <DependentUpon>HistoryOnlyTemplate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Resource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </Resource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\loc64x64.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Add_Button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Delete_Button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Module48x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\printer_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Gear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\logo64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Network_Map.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Add_VS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Add2_VS.png" />
+    <Resource Include="Resources\AddButton_VS.png" />
+    <Resource Include="Resources\AddChildNode.png" />
+    <Resource Include="Resources\AddComponent.png" />
+    <Resource Include="Resources\AddControl.png" />
+    <Resource Include="Resources\asymmetric_network_48.ico" />
+    <Resource Include="Resources\Battery.ico" />
+    <Resource Include="Resources\class.png" />
+    <Resource Include="Resources\Clear.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Disconnect.png" />
+    <Resource Include="Resources\Edit_Button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\ItamAdministrationLocationsFolder48x48.png" />
+    <Resource Include="Resources\ItamAdministrationOrganizationsFolder48x48.png" />
+    <Resource Include="Resources\ItamHardwareHardwareAssetsFolder48x48.png" />
+    <Resource Include="Resources\ItamHardwareHardwareCatalogItemsFolder48x48.png" />
+    <Resource Include="Resources\ItamNetworkAssetManagementNodesFolder48x48.png" />
+    <Resource Include="Resources\ItamNetworkAssetManagementPhysicalConnectionsFolder48x48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\mind_map.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\NewFile.png" />
+    <Resource Include="Resources\Node48x48.png" />
+    <Resource Include="Resources\Open_6296.ico" />
+    <Resource Include="Resources\Open_VS.png" />
+    <Resource Include="Resources\PencilTool_206.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Rack48x48.png" />
+    <Resource Include="Resources\Refresh.png" />
+    <Resource Include="Resources\RemoveLink.png" />
+    <Resource Include="Resources\Restart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\add_48.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\copy_48.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\SoftwareTitle16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\search.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

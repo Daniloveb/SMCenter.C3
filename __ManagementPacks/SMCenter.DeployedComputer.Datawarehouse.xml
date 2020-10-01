@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?><ManagementPack ContentReadable="true" SchemaVersion="2.0" OriginalSchemaVersion="1.1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+  <Manifest>
+    <Identity>
+      <ID>SMCenter.DeployedComputer.Datawarehouse</ID>
+      <Version>1.0.0.12</Version>
+    </Identity>
+    <Name>SMCenter.DeployedComputer.Datawarehouse</Name>
+    <References>
+      <Reference Alias="DWBase">
+        <ID>Microsoft.SystemCenter.Datawarehouse.Base</ID>
+        <Version>7.0.5000.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+      <Reference Alias="System">
+        <ID>System.Library</ID>
+        <Version>7.0.5000.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+      <Reference Alias="Windows">
+        <ID>Microsoft.Windows.Library</ID>
+        <Version>7.5.8501.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+      <Reference Alias="CoreDW">
+        <ID>SMCenter.AssetManagement.Core.Datawarehouse</ID>
+        <Version>1.0.0.11</Version>
+        <PublicKeyToken>75b45bd6835084b1</PublicKeyToken>
+      </Reference>
+      <Reference Alias="NetworkAssetLibrary">
+        <ID>SMCenter.NetworkAssetManagement.Library</ID>
+        <Version>1.2.6.0</Version>
+        <PublicKeyToken>75b45bd6835084b1</PublicKeyToken>
+      </Reference>
+	  <Reference Alias="ConfMgr">
+        <ID>Microsoft.SystemCenter.ConfigurationManager</ID>
+        <Version>7.5.3079.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+	  <Reference Alias="SMCenter_Core">
+        <ID>SMCenter.AssetManagement.Core</ID>
+        <Version>1.1.0.4</Version>
+        <PublicKeyToken>75b45bd6835084b1</PublicKeyToken>
+      </Reference>
+    </References>
+  </Manifest>
+  <Warehouse>
+    <Outriggers>
+      <Outrigger ID="SMCenter_DeployedComputerAssetKey" Accessibility="Public">
+        <Attribute ID="AssetKey" PropertyPath="$Context/Property[Type='NetworkAssetLibrary!SMCenter.DeployedComputer']/AssetKey$" />
+      </Outrigger>
+    </Outriggers>
+    <Dimensions>
+      <Dimension ID="SMCenter_DeployedComputerDim" Accessibility="Public" InferredDimension="true" Target="NetworkAssetLibrary!SMCenter.DeployedComputer" HierarchySupport="Exact" Reconcile="false" >
+		<InclusionAttribute ID="HardwareId" PropertyPath="$Context/Property[Type='ConfMgr!Microsoft.SystemCenter.ConfigurationManager.DeployedComputer']/HardwareId$" SlowlyChangingAttribute="false" />
+	    <InclusionAttribute ID="SMBIOS_UUID" PropertyPath="$Context/Property[Type='ConfMgr!Microsoft.SystemCenter.ConfigurationManager.DeployedComputer']/SMBIOS_UUID$" SlowlyChangingAttribute="false" />
+	  	<InclusionAttribute ID="MACAddresses" PropertyPath="$Context/Property[Type='ConfMgr!Microsoft.SystemCenter.ConfigurationManager.DeployedComputer']/MACAddresses$" SlowlyChangingAttribute="false" />
+		<InclusionAttribute ID="SystemType" PropertyPath="$Context/Property[Type='ConfMgr!Microsoft.SystemCenter.ConfigurationManager.DeployedComputer']/SystemType$" SlowlyChangingAttribute="false" />
+		<InclusionAttribute ID="ChassisType" PropertyPath="$Context/Property[Type='ConfMgr!Microsoft.SystemCenter.ConfigurationManager.DeployedComputer']/ChassisType$" SlowlyChangingAttribute="false" />
+		<InclusionAttribute ID="SerialNumber" PropertyPath="$Context/Property[Type='ConfMgr!Microsoft.SystemCenter.ConfigurationManager.DeployedComputer']/SerialNumber$" SlowlyChangingAttribute="false" />
+	    <InclusionAttribute ID="ISA" PropertyPath="$Context/Property[Type='ConfMgr!Microsoft.SystemCenter.ConfigurationManager.DeployedComputer']/ISA$" SlowlyChangingAttribute="false" />
+		<InclusionAttribute ID="PlatformType" PropertyPath="$Context/Property[Type='ConfMgr!Microsoft.SystemCenter.ConfigurationManager.DeployedComputer']/PlatformType$" SlowlyChangingAttribute="false" />
+	  	<InclusionAttribute ID="SMBIOSAssetTag" PropertyPath="$Context/Property[Type='ConfMgr!Microsoft.SystemCenter.ConfigurationManager.DeployedComputer']/SMBIOSAssetTag$" SlowlyChangingAttribute="false" />
+		<InclusionAttribute ID="BIOSDate" PropertyPath="$Context/Property[Type='NetworkAssetLibrary!SMCenter.DeployedComputer']/BIOSDate$" SlowlyChangingAttribute="false" />
+		<InclusionAttribute ID="AssetKey" PropertyPath="$Context/Property[Type='NetworkAssetLibrary!SMCenter.DeployedComputer']/AssetKey$" SlowlyChangingAttribute="false" />
+		<InclusionAttribute ID="LastTimeInNet" PropertyPath="$Context/Property[Type='NetworkAssetLibrary!SMCenter.DeployedComputer']/LastTimeInNet$" SlowlyChangingAttribute="false" />
+	  </Dimension>
+	  <Dimension ID="SMCenter_DeviceDim" Accessibility="Public" InferredDimension="true" Target="NetworkAssetLibrary!SMCenter.Device" HierarchySupport="Exact" Reconcile="false" >
+	    <InclusionAttribute ID="AssetKey" PropertyPath="$Context/Property[Type='NetworkAssetLibrary!SMCenter.Device']/AssetKey$" SlowlyChangingAttribute="false" />
+	  	<InclusionAttribute ID="Type" PropertyPath="$Context/Property[Type='NetworkAssetLibrary!SMCenter.Device']/Type$" SlowlyChangingAttribute="false" />
+	  	<InclusionAttribute ID="HeightInUnits" PropertyPath="$Context/Property[Type='NetworkAssetLibrary!SMCenter.Device']/HeightInUnits$" SlowlyChangingAttribute="false" />
+		<InclusionAttribute ID="LastTimeInNet" PropertyPath="$Context/Property[Type='NetworkAssetLibrary!SMCenter.Device']/LastTimeInNet$" SlowlyChangingAttribute="false" />
+	    <InclusionAttribute ID="IPAddress" PropertyPath="$Context/Property[Type='NetworkAssetLibrary!SMCenter.Device']/IPAddress$" SlowlyChangingAttribute="false" />
+	  </Dimension>
+	  <Dimension ID="SMCenter_DeviceNetworkAdapterDim" Accessibility="Public" InferredDimension="true" Target="NetworkAssetLibrary!SMCenter.Device.NetworkAdapter" HierarchySupport="Exact" Reconcile="false" >
+		<InclusionAttribute ID="DeviceID" PropertyPath="$Context/Property[Type='NetworkAssetLibrary!SMCenter.Device.NetworkAdapter']/DeviceID$" SlowlyChangingAttribute="false" />
+	    <InclusionAttribute ID="AdapterType" PropertyPath="$Context/Property[Type='NetworkAssetLibrary!SMCenter.Device.NetworkAdapter']/AdapterType$" SlowlyChangingAttribute="false" />
+	  	<InclusionAttribute ID="MACAddress" PropertyPath="$Context/Property[Type='System!System.Device.NetworkAdapter']/MACAddress$" SlowlyChangingAttribute="false" />
+		<InclusionAttribute ID="Manufacturer" PropertyPath="$Context/Property[Type='NetworkAssetLibrary!SMCenter.Device.NetworkAdapter']/Manufacturer$" SlowlyChangingAttribute="false" />
+		<InclusionAttribute ID="ServiceName" PropertyPath="$Context/Property[Type='NetworkAssetLibrary!SMCenter.Device.NetworkAdapter']/ServiceName$" SlowlyChangingAttribute="false" />
+		<InclusionAttribute ID="PerfmonInstance" PropertyPath="$Context/Property[Type='NetworkAssetLibrary!SMCenter.Device.NetworkAdapter']/PerfmonInstance$" SlowlyChangingAttribute="false" />
+	    <InclusionAttribute ID="DHCPEnabled" PropertyPath="$Context/Property[Type='NetworkAssetLibrary!SMCenter.Device.NetworkAdapter']/DHCPEnabled$" SlowlyChangingAttribute="false" />
+		<InclusionAttribute ID="DHCPServer" PropertyPath="$Context/Property[Type='NetworkAssetLibrary!SMCenter.Device.NetworkAdapter']/DHCPServer$" SlowlyChangingAttribute="false" />
+	  	<InclusionAttribute ID="DNSDomain" PropertyPath="$Context/Property[Type='NetworkAssetLibrary!SMCenter.Device.NetworkAdapter']/DNSDomain$" SlowlyChangingAttribute="false" />
+		<InclusionAttribute ID="IPAddress" PropertyPath="$Context/Property[Type='NetworkAssetLibrary!SMCenter.Device.NetworkAdapter']/IPAddress$" SlowlyChangingAttribute="false" />
+		<InclusionAttribute ID="IPSubnet" PropertyPath="$Context/Property[Type='NetworkAssetLibrary!SMCenter.Device.NetworkAdapter']/IPSubnet$" SlowlyChangingAttribute="false" />
+	  </Dimension>
+	  <Dimension ID="SMCenter_ModuleDim" Accessibility="Public" InferredDimension="true" Target="NetworkAssetLibrary!SMCenter.Module" HierarchySupport="Exact" Reconcile="false" >
+		<InclusionAttribute ID="GeoName" PropertyPath="$Context/Property[Type='NetworkAssetLibrary!SMCenter.Module']/GeoName$" SlowlyChangingAttribute="false" />
+	    <InclusionAttribute ID="Index" PropertyPath="$Context/Property[Type='NetworkAssetLibrary!SMCenter.Module']/Index$" SlowlyChangingAttribute="false" />
+	  	<InclusionAttribute ID="MarkerName" PropertyPath="$Context/Property[Type='NetworkAssetLibrary!SMCenter.Module']/MarkerName$" SlowlyChangingAttribute="false" />
+	  </Dimension>
+	  <Dimension ID="SMCenter_WindowsComputerDim" Accessibility="Public" InferredDimension="true" Target="NetworkAssetLibrary!SMCenter.WindowsComputer" HierarchySupport="Exact" Reconcile="false" >
+		<InclusionAttribute ID="IsSCCMClient" PropertyPath="$Context/Property[Type='NetworkAssetLibrary!SMCenter.WindowsComputer']/IsSCCMClient$" SlowlyChangingAttribute="false" />
+	    <InclusionAttribute ID="LastTimeInNet" PropertyPath="$Context/Property[Type='NetworkAssetLibrary!SMCenter.WindowsComputer']/LastTimeInNet$" SlowlyChangingAttribute="false" />
+	  	<InclusionAttribute ID="PrincipalName" PropertyPath="$Context/Property[Type='Windows!Microsoft.Windows.Computer']/PrincipalName$" SlowlyChangingAttribute="false" />
+		<InclusionAttribute ID="DNSName" PropertyPath="$Context/Property[Type='Windows!Microsoft.Windows.Computer']/DNSName$" SlowlyChangingAttribute="false" />
+		<InclusionAttribute ID="NetbiosComputerName" PropertyPath="$Context/Property[Type='Windows!Microsoft.Windows.Computer']/NetbiosComputerName$" SlowlyChangingAttribute="false" />
+		<InclusionAttribute ID="NetbiosDomainName" PropertyPath="$Context/Property[Type='Windows!Microsoft.Windows.Computer']/NetbiosDomainName$" SlowlyChangingAttribute="false" />
+	    <InclusionAttribute ID="IPAddress" PropertyPath="$Context/Property[Type='Windows!Microsoft.Windows.Computer']/IPAddress$" SlowlyChangingAttribute="false" />
+	  	<InclusionAttribute ID="NetworkName" PropertyPath="$Context/Property[Type='Windows!Microsoft.Windows.Computer']/NetworkName$" SlowlyChangingAttribute="false" />
+		<InclusionAttribute ID="ActiveDirectoryObjectSid" PropertyPath="$Context/Property[Type='Windows!Microsoft.Windows.Computer']/ActiveDirectoryObjectSid$" SlowlyChangingAttribute="false" />
+	  	<InclusionAttribute ID="IsVirtualMachine" PropertyPath="$Context/Property[Type='Windows!Microsoft.Windows.Computer']/IsVirtualMachine$" SlowlyChangingAttribute="false" />
+		<InclusionAttribute ID="DomainDnsName" PropertyPath="$Context/Property[Type='Windows!Microsoft.Windows.Computer']/DomainDnsName$" SlowlyChangingAttribute="false" />
+		<InclusionAttribute ID="OrganizationalUnit" PropertyPath="$Context/Property[Type='Windows!Microsoft.Windows.Computer']/OrganizationalUnit$" SlowlyChangingAttribute="false" />
+		<InclusionAttribute ID="ForestDnsName" PropertyPath="$Context/Property[Type='Windows!Microsoft.Windows.Computer']/ForestDnsName$" SlowlyChangingAttribute="false" />
+	    <InclusionAttribute ID="ActiveDirectorySite" PropertyPath="$Context/Property[Type='Windows!Microsoft.Windows.Computer']/ActiveDirectorySite$" SlowlyChangingAttribute="false" />
+	  	<InclusionAttribute ID="LogicalProcessors" PropertyPath="$Context/Property[Type='Windows!Microsoft.Windows.Computer']/LogicalProcessors$" SlowlyChangingAttribute="false" />
+		<InclusionAttribute ID="PhysicalProcessors" PropertyPath="$Context/Property[Type='Windows!Microsoft.Windows.Computer']/PhysicalProcessors$" SlowlyChangingAttribute="false" />
+		<InclusionAttribute ID="HostServerName" PropertyPath="$Context/Property[Type='Windows!Microsoft.Windows.Computer']/HostServerName$" SlowlyChangingAttribute="false" />
+	    <InclusionAttribute ID="VirtualMachineName" PropertyPath="$Context/Property[Type='Windows!Microsoft.Windows.Computer']/VirtualMachineName$" SlowlyChangingAttribute="false" />
+	  	<InclusionAttribute ID="OffsetInMinuteFromGreenwichTime" PropertyPath="$Context/Property[Type='Windows!Microsoft.Windows.Computer']/OffsetInMinuteFromGreenwichTime$" SlowlyChangingAttribute="false" />
+		<InclusionAttribute ID="LastInventoryDate" PropertyPath="$Context/Property[Type='Windows!Microsoft.Windows.Computer']/LastInventoryDate$" SlowlyChangingAttribute="false" />
+	  </Dimension>
+	</Dimensions>
+  </Warehouse>
+  <LanguagePacks>
+  </LanguagePacks>
+</ManagementPack>

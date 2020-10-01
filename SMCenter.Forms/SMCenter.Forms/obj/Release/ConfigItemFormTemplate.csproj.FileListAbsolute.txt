@@ -1,0 +1,13 @@
+C:\_Development\Blog\ConfigItemFormTemplate\ConfigItemFormTemplate\bin\Release\ConfigItemFormTemplate.dll
+C:\_Development\Blog\ConfigItemFormTemplate\ConfigItemFormTemplate\bin\Release\ConfigItemFormTemplate.pdb
+C:\_Development\Blog\ConfigItemFormTemplate\ConfigItemFormTemplate\obj\Release\ResolveAssemblyReference.cache
+C:\_Development\Blog\ConfigItemFormTemplate\ConfigItemFormTemplate\obj\Release\CITemplate.baml
+C:\_Development\Blog\ConfigItemFormTemplate\ConfigItemFormTemplate\obj\Release\CITemplate.g.cs
+C:\_Development\Blog\ConfigItemFormTemplate\ConfigItemFormTemplate\obj\Release\ConfigItemFormTemplate_MarkupCompile.cache
+C:\_Development\Blog\ConfigItemFormTemplate\ConfigItemFormTemplate\obj\Release\ConfigItemFormTemplate.g.resources
+C:\_Development\Blog\ConfigItemFormTemplate\ConfigItemFormTemplate\obj\Release\ConfigItemFormTemplate.Properties.Resources.resources
+C:\_Development\Blog\ConfigItemFormTemplate\ConfigItemFormTemplate\obj\Release\ResGen.read.1.tlog
+C:\_Development\Blog\ConfigItemFormTemplate\ConfigItemFormTemplate\obj\Release\ResGen.write.1.tlog
+C:\_Development\Blog\ConfigItemFormTemplate\ConfigItemFormTemplate\obj\Release\ConfigItemFormTemplate.dll
+C:\_Development\Blog\ConfigItemFormTemplate\ConfigItemFormTemplate\obj\Release\ConfigItemFormTemplate.pdb
+C:\_Development\Blog\ConfigItemFormTemplate\ConfigItemFormTemplate\bin\Release\new-mpbundle.ps1

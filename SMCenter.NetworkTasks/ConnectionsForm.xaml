@@ -1,0 +1,56 @@
+﻿<Window x:Class="SMCenter.NetworkTasks.ConnectionsForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:SMCenter.NetworkTasks"
+        Title="Connections View" Name="CableWindow" Height="700" Width="1000" WindowState="Maximized" WindowStartupLocation="CenterScreen" Loaded="ConnectionsWindow_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="42"/>
+            <RowDefinition Height="250"/>
+            <RowDefinition/>
+            <RowDefinition Height="42"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <TreeView x:Name="LocationsTreeView" Grid.Column="0" Grid.Row="0" Grid.RowSpan="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1,30,1,1" TreeViewItem.Expanded="LocationsTreeView_Expanded" SelectedItemChanged="LocationsTreeView_SelectedItemChanged"/>
+        <TreeView x:Name="NodesTreeView" Grid.Column="1" Grid.Row="0" Grid.RowSpan="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1,30,1,1" TreeViewItem.Expanded="NodesTreeView_Expanded" SelectedItemChanged="NodesTreeView_SelectedItemChanged"/>
+        <TreeView x:Name="ConnectionsTreeView" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1,30,50,1" SelectedItemChanged="ConnectionsTreeView_SelectedItemChanged"/>
+        <TreeView x:Name="CabelsTreeView" Grid.Column="2" Grid.Row="2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1,30,50,1" SelectedItemChanged="CabelsTreeView_SelectedItemChanged" MouseDoubleClick="CabelsTreeView_MouseDoubleClick"/>
+        <DockPanel Grid.ColumnSpan ="3" Grid.Row="3" Dock="Bottom" Height="42" HorizontalAlignment="Stretch" VerticalAlignment="Bottom">
+                <Grid>
+                    <Image Name="Logo" HorizontalAlignment="Left" Margin="5,5,5,5" Source="Images/logo64x64.png" Height="32" Width="32" />
+                    <Label Margin="0,0,8,0" Content="Close" Height="25" Width="70" Padding="0,0,0,0" HorizontalAlignment="Right" BorderThickness="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Gray" Name="lbCancel" MouseDown="lbCancel_MouseDown"/>
+                </Grid>
+        </DockPanel>
+        <TextBox Name="txtTargetObject" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="123.441,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="262.089" TextDecorations="Underline"/>
+        <Label Content="Целевой объект:" Grid.Column="2" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="108.441"/>
+        <TextBox Name="txtLocation" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="538.293,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="145.307" TextDecorations="Underline"/>
+        <Label Content="Связанная локация:" Grid.Column="2" HorizontalAlignment="Left" Margin="405.747,10,0,0" VerticalAlignment="Top" Width="127.546"/>
+        <Label Content="Сетевые подключения (Network Connections)" Grid.Column="2" HorizontalAlignment="Left" Margin="10,2,0,0" Grid.Row="1" VerticalAlignment="Top" Width="301.993"/>
+        <Label Content="Кабельные подключения (NetworkAdapterHasChildNetworkAdapter)" Grid.Column="2" HorizontalAlignment="Left" Margin="10,2,0,0" Grid.Row="2" VerticalAlignment="Top" Width="439.593"/>
+        <Label Content="Локации" Grid.Column="0" HorizontalAlignment="Left" Margin="10,2,0,0" Grid.Row="0" VerticalAlignment="Top" Width="115.8"/>
+        <Label Content="Сетевые устройства" Grid.Column="1" HorizontalAlignment="Left" Margin="10,2,0,0" Grid.Row="0" VerticalAlignment="Top" Width="130"/>
+        <StackPanel Name="ConnectionsButtons" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Right" Height="85" Width="50" VerticalAlignment="Top" Margin="0,30,0,0">
+            <Border Name ="brd_Con_Add" HorizontalAlignment="Right" Margin="0,0,5,0" Height="25" Width="40"  BorderThickness="1" BorderBrush="Gray">
+                <Image Name ="Con_Image_Add" Source="Images\AddControl.png" HorizontalAlignment="Center" VerticalAlignment="Center" Height="18" Width="18" />
+            </Border>
+            <Border Name ="brd_Con_Edit" HorizontalAlignment="Right" Margin="0,5,5,0" Height="25" Width="40"  BorderThickness="1" BorderBrush="Gray">
+                <Image Name ="Con_Image_Edit" Source="Images\Open_VS.png" HorizontalAlignment="Center" VerticalAlignment="Center" Height="18" Width="18" />
+            </Border>
+        </StackPanel>
+        <StackPanel Name="CablesButtons" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Right" Height="85" Width="50" VerticalAlignment="Top" Margin="0,30,0,0">
+            <Border Name ="brd_CI_Add" HorizontalAlignment="Right" Margin="0,0,5,0" Height="25" Width="40"  BorderThickness="1" BorderBrush="Gray">
+                <Image Name ="CI_Image_Add" Source="Images\AddControl.png" HorizontalAlignment="Center" VerticalAlignment="Center" Height="18" Width="18" />
+            </Border>
+            <Border Name ="brd_CI_Edit" HorizontalAlignment="Right" Margin="0,5,5,0" Height="25" Width="40"  BorderThickness="1" BorderBrush="Gray">
+                <Image Name ="CI_Image_Edit" Source="Images\Open_VS.png" HorizontalAlignment="Center" VerticalAlignment="Center" Height="18" Width="18" />
+            </Border>
+            <Border Name ="brd_CI_Delete" HorizontalAlignment="Right" Margin="0,5,5,0" Height="25" Width="40"  BorderThickness="1" BorderBrush="Gray">
+                <Image Name ="CI_Image_Delete" Source="Images\Clear.ico" HorizontalAlignment="Center" VerticalAlignment="Center" Height="18" Width="18" />
+            </Border>
+        </StackPanel>
+    </Grid>
+</Window>

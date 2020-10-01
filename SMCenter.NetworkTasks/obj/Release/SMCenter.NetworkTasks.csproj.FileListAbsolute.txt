@@ -1,0 +1,8 @@
+c:\Dropbox\Local\Current\SCSM\SMCenter.NetworkTasks\obj\Release\SMCenter.NetworkTasks.csprojResolveAssemblyReference.cache
+c:\Dropbox\Local\Current\SCSM\SMCenter.NetworkTasks\obj\Release\ConnectionsForm.g.cs
+c:\Dropbox\Local\Current\SCSM\SMCenter.NetworkTasks\obj\Release\CanvasForm.g.cs
+c:\Dropbox\Local\Current\SCSM\SMCenter.NetworkTasks\obj\Release\GeneratedInternalTypeHelper.g.cs
+c:\Dropbox\Local\Current\SCSM\SMCenter.NetworkTasks\obj\Release\SMCenter.NetworkTasksdll_MarkupCompile.cache
+c:\Dropbox\Local\Current\SCSM\SMCenter.NetworkTasks\obj\Release\SMCenter.NetworkTasksdll_MarkupCompile.lref
+c:\Dropbox\Local\Current\SCSM\SMCenter.NetworkTasks\obj\Release\SMCenter.NetworkTasks_MarkupCompile.cache
+c:\Dropbox\Local\Current\SCSM\SMCenter.NetworkTasks\obj\Release\SMCenter.NetworkTasks_MarkupCompile.lref

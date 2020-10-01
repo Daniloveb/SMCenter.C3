@@ -1,0 +1,85 @@
+﻿<ManagementPack ContentReadable="true" SchemaVersion="2.0" OriginalSchemaVersion="1.1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+  <Manifest>
+    <Identity>
+      <ID>SMCenter.MapForm</ID>
+      <Version>1.3.24.0</Version>
+    </Identity>
+    <Name>SMCenter Map Form Tasks</Name>
+    <References>
+      <Reference Alias="System">
+        <ID>System.Library</ID>
+        <Version>7.5.8501.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+      <Reference Alias="Console">
+        <ID>Microsoft.EnterpriseManagement.ServiceManager.UI.Console</ID>
+        <Version>7.5.3079.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+      <Reference Alias="SMC_Core">
+        <ID>SMCenter.AssetManagement.Core</ID>
+        <Version>1.0.4.4</Version>
+        <PublicKeyToken>75b45bd6835084b1</PublicKeyToken>
+      </Reference>
+	  <Reference Alias="SMC_NetworkAssetManagement_Library">
+        <ID>SMCenter.NetworkAssetManagement.Library</ID>
+        <Version>1.1.0.18</Version>
+        <PublicKeyToken>75b45bd6835084b1</PublicKeyToken>
+      </Reference>
+    </References>
+  </Manifest>
+  <Categories>
+  <Category ID="SMCenter.NetworkTasksCategory" Value="Console!Microsoft.EnterpriseManagement.ServiceManager.ManagementPack">
+      <ManagementPackName>SMCenter.MapForm</ManagementPackName>
+      <ManagementPackVersion>1.2.7.21</ManagementPackVersion>
+	  <ManagementPackPublicKeyToken>75b45bd6835084b1</ManagementPackPublicKeyToken>
+    </Category>
+	<Category ID="Button16x16IconCategory" Target="network_16" Value="System!System.Internal.ManagementPack.Images.u16x16Icon" />
+    <Category ID="Button32x32IconCategory" Target="network_32" Value="System!System.Internal.ManagementPack.Images.u32x32Icon" />	
+  </Categories>
+  <Presentation>
+    <Forms>
+    </Forms>
+	<ConsoleTasks>
+     
+	  <ConsoleTask ID="MapFormTask" Accessibility="Public" Enabled="true" Target="System!System.ConfigItem" RequireOutput="false">
+        <Assembly>Console!SdkDataAccessAssembly</Assembly>
+        <Handler>Microsoft.EnterpriseManagement.UI.SdkDataAccess.ConsoleTaskHandler</Handler>
+        <Parameters>
+          <Argument Name="Assembly">SMCenter.NetworkTasks</Argument>
+          <Argument Name="Type">SMCenter.NetworkTasks.MapFormAction</Argument>
+        </Parameters>
+      </ConsoleTask>
+	</ConsoleTasks>
+	<ImageReferences>
+	  <ImageReference ElementID="MapFormTask" ImageID="network_32" />
+	  <ImageReference ElementID="MapFormTask" ImageID="network_16" />
+	</ImageReferences>
+	<StringResources>
+      
+    </StringResources>
+  </Presentation>
+  <LanguagePacks>
+    <LanguagePack ID="ENU" IsDefault="true">
+      <DisplayStrings>
+        <DisplayString ElementID="MapFormTask">
+          <Name>Open Network Map</Name>
+        </DisplayString>
+    
+      </DisplayStrings>
+    </LanguagePack>
+	<LanguagePack ID="RUS" IsDefault="false">
+      <DisplayStrings>
+        <DisplayString ElementID="MapFormTask">
+          <Name>Открыть карту сети</Name>
+        </DisplayString>
+        
+	</DisplayStrings>
+	</LanguagePack>
+  </LanguagePacks>
+  <Resources>
+	<Assembly ID="SMCenter.NetworkTasksLib" Accessibility="Public" FileName="SMCenter.NetworkTasksLib.dll" QualifiedName="SMCenter.NetworkTasks" />
+	<Image ID="network_32" Accessibility="Public" HasNullStream="false" FileName="network_32.png" />
+	<Image ID="network_16" Accessibility="Public" HasNullStream="false" FileName="network_16.png" />
+  </Resources>
+</ManagementPack>

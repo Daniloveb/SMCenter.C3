@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?><ManagementPack ContentReadable="true" SchemaVersion="2.0" OriginalSchemaVersion="1.1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+  <Manifest>
+    <Identity>
+      <ID>SMCenter.AssetManagement.Core.Datawarehouse</ID>
+      <Version>1.0.0.11</Version>
+    </Identity>
+    <Name>SMCenter.AssetManagementCoreDatawarehouse</Name>
+    <References>
+      <Reference Alias="DWBase">
+        <ID>Microsoft.SystemCenter.Datawarehouse.Base</ID>
+        <Version>7.0.5000.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+      <Reference Alias="ServiceManagerChangeManagementDataWarehouse">
+        <ID>ServiceManager.ChangeManagement.Library.Datawarehouse</ID>
+        <Version>7.0.5000.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+      <Reference Alias="ServiceManagerIncidentManagementDataWarehouse">
+        <ID>ServiceManager.IncidentManagement.Library.Datawarehouse</ID>
+        <Version>7.0.5000.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+      <Reference Alias="System">
+        <ID>System.Library</ID>
+        <Version>7.0.5000.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+      <Reference Alias="Windows">
+        <ID>Microsoft.Windows.Library</ID>
+        <Version>7.0.5000.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+      <Reference Alias="CoreLibrary">
+        <ID>SMCenter.AssetManagement.Core</ID>
+        <Version>1.1.0.3</Version>
+        <PublicKeyToken>75b45bd6835084b1</PublicKeyToken>
+      </Reference>
+	  <Reference Alias="NetworkLibrary">
+        <ID>SMCenter.NetworkAssetManagement.Library</ID>
+        <Version>1.2.6.0</Version>
+        <PublicKeyToken>75b45bd6835084b1</PublicKeyToken>
+      </Reference>
+    </References>
+  </Manifest>
+  <TypeDefinitions>
+    <EntityTypes>
+      <EnumerationTypes>
+        <EnumerationValue ID="Domain.ITAssetManagement" Accessibility="Public" Parent="DWBase!Domain" />
+      </EnumerationTypes>
+    </EntityTypes>
+  </TypeDefinitions>
+  <LanguagePacks>
+  </LanguagePacks>
+  <Resources>
+  </Resources>
+</ManagementPack>

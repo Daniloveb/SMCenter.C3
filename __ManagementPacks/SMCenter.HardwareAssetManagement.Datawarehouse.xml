@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?><ManagementPack ContentReadable="true" SchemaVersion="2.0" OriginalSchemaVersion="1.1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+  <Manifest>
+    <Identity>
+      <ID>SMC.HardwareAssetManagement.Datawarehouse</ID>
+      <Version>1.0.0.10</Version>
+    </Identity>
+    <Name>SMC.HardwareAssetManagementDatawarehouse</Name>
+    <References>
+      <Reference Alias="DWBase">
+        <ID>Microsoft.SystemCenter.Datawarehouse.Base</ID>
+        <Version>7.0.5000.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+      <Reference Alias="System">
+        <ID>System.Library</ID>
+        <Version>7.0.5000.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+      <Reference Alias="Windows">
+        <ID>Microsoft.Windows.Library</ID>
+        <Version>7.0.5000.0</Version>
+        <PublicKeyToken>31bf3856ad364e35</PublicKeyToken>
+      </Reference>
+      <Reference Alias="CoreDW">
+        <ID>SMC.AssetManagement.Core.Datawarehouse</ID>
+        <Version>1.0.0.7</Version>
+        <PublicKeyToken>75b45bd6835084b1</PublicKeyToken>
+      </Reference>
+      <Reference Alias="HardwareAssetLibrary">
+        <ID>SMC.HardwareAssetManagement.Library</ID>
+        <Version>1.0.4.11</Version>
+        <PublicKeyToken>75b45bd6835084b1</PublicKeyToken>
+      </Reference>
+    </References>
+  </Manifest>
+  <Warehouse>
+    <Outriggers>
+      <Outrigger ID="SMC_HardwareAssetType" Accessibility="Public">
+        <Attribute ID="AssetType" PropertyPath="$Context/Property[Type='HardwareAssetLibrary!SMC.HardwareAsset']/Type$" />
+      </Outrigger>
+      <Outrigger ID="SMC_HardwareAssetLifecycleStatus" Accessibility="Public">
+        <Attribute ID="LifecycleStatus" PropertyPath="$Context/Property[Type='HardwareAssetLibrary!SMC.HardwareAsset']/LifecycleStatus$" />
+      </Outrigger>
+      <Outrigger ID="SMC_HardwareAssetDisposalReason" Accessibility="Public">
+        <Attribute ID="Reason" PropertyPath="$Context/Property[Type='HardwareAssetLibrary!SMC.HardwareAssetDisposal']/Reason$" />
+      </Outrigger>
+    </Outriggers>
+    <Dimensions>
+      <Dimension ID="SMC_HardwareAssetDim" Accessibility="Public" InferredDimension="true" Target="HardwareAssetLibrary!SMC.HardwareAsset" HierarchySupport="Exact" Reconcile="false" >
+		<InclusionAttribute ID="AssetKey" PropertyPath="$Context/Property[Type='HardwareAssetLibrary!SMC.HardwareAsset']/AssetKey$" SlowlyChangingAttribute="false" />
+		<InclusionAttribute ID="SerialNumber" PropertyPath="$Context/Property[Type='HardwareAssetLibrary!SMC.HardwareAsset']/SerialNumber$" SlowlyChangingAttribute="false" />
+		<InclusionAttribute ID="Description" PropertyPath="$Context/Property[Type='HardwareAssetLibrary!SMC.HardwareAsset']/Description$" SlowlyChangingAttribute="false" />
+	    <InclusionAttribute ID="Status" PropertyPath="$Context/Property[Type='HardwareAssetLibrary!SMC.HardwareAsset']/Status$" SlowlyChangingAttribute="false" />
+	  	<InclusionAttribute ID="Type" PropertyPath="$Context/Property[Type='HardwareAssetLibrary!SMC.HardwareAsset']/Type$" SlowlyChangingAttribute="false" />
+		<InclusionAttribute ID="LifecycleStatus" PropertyPath="$Context/Property[Type='HardwareAssetLibrary!SMC.HardwareAsset']/LifecycleStatus$" SlowlyChangingAttribute="false" />
+		<InclusionAttribute ID="LifecycleStatusChangedDate" PropertyPath="$Context/Property[Type='HardwareAssetLibrary!SMC.HardwareAsset']/LifecycleStatusChangedDate$" SlowlyChangingAttribute="false" />
+		<InclusionAttribute ID="ReceivedDate" PropertyPath="$Context/Property[Type='HardwareAssetLibrary!SMC.HardwareAsset']/ReceivedDate$" SlowlyChangingAttribute="false" />
+	    <InclusionAttribute ID="Cost" PropertyPath="$Context/Property[Type='HardwareAssetLibrary!SMC.HardwareAsset']/Cost$" SlowlyChangingAttribute="false" />
+		<InclusionAttribute ID="CostIsoCurrencyCode" PropertyPath="$Context/Property[Type='HardwareAssetLibrary!SMC.HardwareAsset']/CostIsoCurrencyCode$" SlowlyChangingAttribute="false" />
+	  	<InclusionAttribute ID="PurchaseOrderNumber" PropertyPath="$Context/Property[Type='HardwareAssetLibrary!SMC.HardwareAsset']/PurchaseOrderNumber$" SlowlyChangingAttribute="false" />
+		<InclusionAttribute ID="PurchaseOrderDate" PropertyPath="$Context/Property[Type='HardwareAssetLibrary!SMC.HardwareAsset']/PurchaseOrderDate$" SlowlyChangingAttribute="false" />
+		<InclusionAttribute ID="InvoiceNumber" PropertyPath="$Context/Property[Type='HardwareAssetLibrary!SMC.HardwareAsset']/InvoiceNumber$" SlowlyChangingAttribute="false" />
+		<InclusionAttribute ID="InvoiceDate" PropertyPath="$Context/Property[Type='HardwareAssetLibrary!SMC.HardwareAsset']/InvoiceDate$" SlowlyChangingAttribute="false" />
+	    <InclusionAttribute ID="ReturnedDate" PropertyPath="$Context/Property[Type='HardwareAssetLibrary!SMC.HardwareAsset']/ReturnedDate$" SlowlyChangingAttribute="false" />
+		<InclusionAttribute ID="PlannedRefreshDate" PropertyPath="$Context/Property[Type='HardwareAssetLibrary!SMC.HardwareAsset']/PlannedRefreshDate$" SlowlyChangingAttribute="false" />
+		<InclusionAttribute ID="Path" PropertyPath="$Context/Property[Type='HardwareAssetLibrary!SMC.HardwareAsset']/Path$" SlowlyChangingAttribute="false" />
+		<InclusionAttribute ID="IsSCCMClient" PropertyPath="$Context/Property[Type='HardwareAssetLibrary!SMC.HardwareAsset']/IsSCCMClient$" SlowlyChangingAttribute="false" />
+		<InclusionAttribute ID="BIOSDate" PropertyPath="$Context/Property[Type='HardwareAssetLibrary!SMC.HardwareAsset']/BIOSDate$" SlowlyChangingAttribute="false" />
+	  </Dimension>
+	</Dimensions>
+    <Facts>
+      <RelationshipFact ID="SMC_HardwareAssetCIFact" Accessibility="Public" Domain="CoreDW!Domain.ITAssetManagement" TimeGrain="Daily" SourceType="HardwareAssetLibrary!SMC.HardwareAsset" SourceDimension="SMC_HardwareAssetDim">
+        <Relationships RelationshipType="HardwareAssetLibrary!SMC.HardwareAssetReferencesConfigItem" TargetDimension="DWBase!ConfigItemDim" />
+      </RelationshipFact>
+      <RelationshipFact ID="SMC_HardwareAssetComputerFact" Accessibility="Public" Domain="CoreDW!Domain.ITAssetManagement" TimeGrain="Daily" SourceType="HardwareAssetLibrary!SMC.HardwareAsset" SourceDimension="SMC_HardwareAssetDim">
+        <Relationships RelationshipType="HardwareAssetLibrary!SMC.HardwareAssetReferencesConfigItem" TargetDimension="DWBase!ComputerDim" />
+      </RelationshipFact>
+      <RelationshipFact ID="SMC_HardwareAssetChildHardwareAssetFact" Accessibility="Public" Domain="CoreDW!Domain.ITAssetManagement" TimeGrain="Daily" SourceType="HardwareAssetLibrary!SMC.HardwareAsset" SourceDimension="SMC_HardwareAssetDim">
+        <Relationships RelationshipType="HardwareAssetLibrary!SMC.HardwareAssetContainsChildHardwareAsset" TargetDimension="SMC_HardwareAssetDim" />
+      </RelationshipFact>
+    </Facts>
+  </Warehouse>
+  <LanguagePacks>
+  </LanguagePacks>
+</ManagementPack>

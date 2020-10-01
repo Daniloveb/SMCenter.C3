@@ -1,0 +1,98 @@
+﻿<Window x:Class="SMCenter.Forms.SCSForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:SMCenter.Forms"
+        Title="SCS Edit Form" Name="SCSWindow" Height="500" WindowState="Normal" Width="750" WindowStartupLocation="CenterScreen" Loaded="ConnectionsWindow_Loaded" ResizeMode="NoResize" Icon="Resources/Network_Map.png">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="42"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="250"/>
+        </Grid.ColumnDefinitions>
+        <TreeView x:Name="CabelsTreeView" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3" VerticalAlignment="Stretch" Margin="1,30,55,1" SelectedItemChanged="CabelsTreeView_SelectedItemChanged" MouseDoubleClick="CabelsTreeView_MouseDoubleClick"/>
+        <DockPanel Grid.ColumnSpan ="4" Grid.Row="4" Dock="Bottom" Height="42" HorizontalAlignment="Stretch" VerticalAlignment="Bottom">
+                <Grid>
+                    <Image Name="Logo" HorizontalAlignment="Left" Margin="5,5,5,5" Source="Resources/logo64x64.png" Height="32" Width="32" />
+                    <Label Margin="0,0,8,0" Content="Close" Height="25" Width="70" Padding="0,0,0,0" HorizontalAlignment="Right" BorderThickness="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderBrush="Gray" Name="lbCancel" MouseDown="lbCancel_MouseDown"/>
+                </Grid>
+        </DockPanel>
+        <Label Content="Кабельные подключения (ChildNetworkAdapterRefParentNetworkAdapter)" Grid.Column="0" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="10,2,0,0" Grid.Row="0" VerticalAlignment="Top" Width="439.593"/>
+        
+        
+        <StackPanel Name="CablesButtons" Grid.Row="0" Grid.Column="2" Height="200" Width="50" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,30,5,0">
+            <Border Name ="brd_CI_Add" HorizontalAlignment="Right" Margin="0,0,5,0" Height="25" Width="40"  BorderThickness="1" BorderBrush="Gray">
+                <Image Name ="CI_Image_Add" Source="Resources\AddControl.png" HorizontalAlignment="Center" VerticalAlignment="Center" Height="18" Width="18" />
+            </Border>
+            <Border Name ="brd_CI_Edit" HorizontalAlignment="Right" Margin="0,5,5,0" Height="25" Width="40"  BorderThickness="1" BorderBrush="Gray">
+                <Image Name ="CI_Image_Edit" Source="Resources\Open_VS.png" HorizontalAlignment="Center" VerticalAlignment="Center" Height="18" Width="18" />
+            </Border>
+            <Border Name ="brd_CI_Delete" HorizontalAlignment="Right" Margin="0,5,5,0" Height="25" Width="40"  BorderThickness="1" BorderBrush="Gray" MouseDown="brd_CI_Delete_MouseDown">
+                <Image Name ="CI_Image_Delete" Source="Resources\Clear.ico" HorizontalAlignment="Center" VerticalAlignment="Center" Height="18" Width="18" />
+            </Border>
+            <Label Content="Footage" HorizontalAlignment="Right" Margin="0,30,5,0" VerticalAlignment="Top" FontSize="9"/>
+            <Border Name ="brd_F1" HorizontalAlignment="Right" Margin="0,5,5,0" Height="25" Width="40"  BorderThickness="1" BorderBrush="Gray">
+                <TextBox x:Name="txtF1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" TextDecorations="Underline" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsEnabled="False" LostFocus="txtF1_LostFocus"/>
+            </Border>
+            <Border Name ="brd_F2" HorizontalAlignment="Right" Margin="0,5,5,0" Height="25" Width="40"  BorderThickness="1" BorderBrush="Gray">
+                <TextBox x:Name="txtF2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" TextDecorations="Underline" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsEnabled="False" LostFocus="txtF2_LostFocus"/>
+            </Border>
+        </StackPanel>
+
+        <Border x:Name="brdRack1" BorderBrush="Gray" BorderThickness="1" Grid.Column="0" Grid.RowSpan="2" Grid.ColumnSpan="2" HorizontalAlignment="Stretch" Margin="1" Grid.Row="1" VerticalAlignment="Stretch">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="25"/>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="50"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+                <Label Content="Rack:" Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" Margin="8,2,0,0" VerticalAlignment="Top" Width="130"/>
+                <Label Content="PatchPanel In:" Grid.Column="0" Grid.Row ="1" HorizontalAlignment="Left" Margin="8,-2,0,0" VerticalAlignment="Top" Width="108.441"/>
+                <Label Content="Port:" Grid.Column="0" Grid.Row ="1" HorizontalAlignment="Left" Margin="156,-2,0,0" VerticalAlignment="Top" Width="108.441"/>
+                <ComboBox x:Name="cboxRack1" Grid.Column="0" Grid.Row="0" Margin="10,25,10,0" VerticalAlignment="Top" HorizontalAlignment="Stretch" IsEditable="False" SelectionChanged="cboxRack1_SelectionChanged"/>
+                <ComboBox x:Name="cboxPP1" Grid.Column="0" Grid.Row="1" Margin="10,20,60,0" VerticalAlignment="Top" HorizontalAlignment="Stretch" IsEditable="False" SelectionChanged="cboxPP1_SelectionChanged" />
+                <ComboBox x:Name="cboxPPP1" Grid.Column="0" Grid.Row="1" Margin="10,20,10,0" VerticalAlignment="Top" Width="40" HorizontalAlignment="Right" />
+            
+                <Label Content="Rack:" Grid.Column="2" HorizontalAlignment="Left" Margin="8,2,0,0" Grid.Row="0" VerticalAlignment="Top" Width="130"/>
+                <Label Content="PatchPanel Out:" Grid.Column="2" Grid.Row ="1" HorizontalAlignment="Left" Margin="8,-2,0,0" VerticalAlignment="Top" Width="108.441"/>
+                <Label Content="Port:" Grid.Column="2" Grid.Row ="1" HorizontalAlignment="Left" Margin="156,-2,0,0" VerticalAlignment="Top" Width="108.441"/>
+                <ComboBox x:Name="cboxRack2" Grid.Column="2" Grid.Row="0" Margin="10,25,10,0" VerticalAlignment="Top" HorizontalAlignment="Stretch" SelectionChanged="cboxRack2_SelectionChanged" />
+                <ComboBox x:Name="cboxPP2" Grid.Column="2" Grid.Row="1" Margin="10,20,60,0" VerticalAlignment="Top" HorizontalAlignment="Stretch" IsEditable="False" SelectionChanged="cboxPP2_SelectionChanged" />
+                <ComboBox x:Name="cboxPPP2" Grid.Column="2" Grid.Row="1" Margin="10,20,10,0" VerticalAlignment="Top" Width="40" HorizontalAlignment="Right" />
+                <Border Name="brd_PPAdd" HorizontalAlignment="Center" Grid.Column="3" Grid.Row="0" Margin="0,0,0,0" Height="40" Width="40"  BorderThickness="1" BorderBrush="Gray" MouseDown="brd_PPAdd_MouseDown">
+                    <Image Name ="Image_PPAdd" Source="Resources\add_48.ico" HorizontalAlignment="Center" VerticalAlignment="Center" Height="35" Width="35" />
+                </Border>
+                <Border Name="brd_PPCopy" HorizontalAlignment="Center" Grid.Column="1" Grid.Row="0" Margin="0,20,0,0" Height="25" Width="25"  BorderThickness="1" BorderBrush="Gray" MouseDown="brd_PPCopy_MouseDown">
+                    <Image Name ="Image_PPCopy" Source="Resources\copy_48.ico" HorizontalAlignment="Center" VerticalAlignment="Center" Height="20" Width="20" />
+                </Border>
+            </Grid>
+        </Border>
+        
+        <Border x:Name="brdModule" BorderBrush="Gray" BorderThickness="1" Grid.Column="2" Grid.RowSpan="2" HorizontalAlignment="Stretch" Margin="1" Grid.Row="1" VerticalAlignment="Stretch">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="50"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="Location:" Grid.Column="0" HorizontalAlignment="Left" Margin="8,2,0,0" Grid.Row="0" VerticalAlignment="Top" Width="115.8"/>
+                <Label Content="Module:" Grid.Column="0" Grid.Row ="1" HorizontalAlignment="Left" Margin="8,47,0,0" VerticalAlignment="Top" Width="115.8"/>
+                <Label x:Name="lbLocation" Content="Select" Grid.Column="0" HorizontalAlignment="Stretch" Margin="10,25,10,0" Grid.Row="0" Height="25" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Top" BorderBrush="Gray" BorderThickness="1" MouseDown="lbLocation_MouseDown" />
+                <ComboBox x:Name="cboxModule" Grid.Column="0" Grid.Row="1" Margin="10,70,10,0" VerticalAlignment="Top" HorizontalAlignment="Stretch" />
+                <Border Name="brd_ModuleAdd" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Column="2" Grid.Row="0" Margin="0,5,5,0" Height="40" Width="40"  BorderThickness="1" BorderBrush="Gray" MouseDown="brd_ModuleAdd_MouseDown">
+                    <Image Name ="Image_ModuleAdd" Source="Resources\add_48.ico" HorizontalAlignment="Center" VerticalAlignment="Center" Height="35" Width="35" />
+                </Border>
+            </Grid>
+        </Border>
+
+    </Grid>
+</Window>
