@@ -14,3 +14,8 @@ Project stopped at 2016. Arhive store.
 
 
 This repo is part of developed Management Pack for SCSM.
+
+Object Map ![Map](https://github.com/Daniloveb/SMCenter.C3/blob/master/__Docs/LogicalObjectMap.jpg)
+Sample forms ![Connections](https://github.com/Daniloveb/SMCenter.C3/blob/master/__Screens/ConnectionView.jpg)
+![Plan sample](https://github.com/Daniloveb/SMCenter.C3/blob/master/__Screens/Plan1.jpg)
+![Plan sample](https://github.com/Daniloveb/SMCenter.C3/blob/master/__Screens/SCSForm.jpg)
