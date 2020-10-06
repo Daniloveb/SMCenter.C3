@@ -3,7 +3,7 @@
 
 Asset Management Complex toolset.
 Project stopped at 2016. Arhive store.
->Questions >> @daniloveb
+>Questions >> https://t.me/daniloveb
 
 ## Project structure:
 * MS SCSM with set Management Packs as Management point and main CMDB store
